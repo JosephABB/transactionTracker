@@ -1,5 +1,6 @@
-import csv
-import contLoop
+import import_file
+import stats
+import cont_loop
 
 print("Welcome to the transaction tracker!")
 funct = input("What would you like to perform (import/statistics)? ")
@@ -10,18 +11,18 @@ cont = True
 inv = False
 
 while cont:
+    #code for import function
     if funct.lower().strip() == "import":
-        #code for import function
         if inv == False:
             print("importing")
-        cont, funct, inv = contLoop.cont_anlys()
+        cont, funct, inv = cont_loop.cont_anlys()
+    #code for statistics function
     elif funct.lower().strip() == "statistics":
-        #code for statistics function
         if inv == False:
             print("statistics-ing")
-        cont, funct, inv = contLoop.cont_anlys()
+        cont, funct, inv = cont_loop.cont_anlys()
+    #input not valid
     else:
-        #input not valid
         print("INVALID FUNCTION")
         funct = input("What would you like to perform (import/statistics)? ")
         continue
