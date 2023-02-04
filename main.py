@@ -6,27 +6,36 @@ cont = True
 inv = False
 
 while cont:
-    inv = False
     if funct.lower().strip() == "import":
         #code for import function
-        print("importing")
+        if inv == False:
+            print("importing")
         prompt = input(("Would you like to run any further analyses (yes/no)? "))
         if prompt.lower().strip() == "no":
             cont = False
+            inv = False
             continue
-        else:
+        elif prompt.lower().strip() == "yes":
             funct = input("What would you like to perform (import/statistics)? ")
-            continue
+            inv = False
+        else:
+            print("INVALID RESPONSE")
+            inv = True
     elif funct.lower().strip() == "statistics":
         #code for statistics function
-        print("statistics-ing")
+        if inv == False:
+            print("statistics-ing")
         prompt = input(("Would you like to run any further analyses (yes/no)? "))
         if prompt.lower().strip() == "no":
             cont = False
+            inv = False
             continue
-        else:
+        elif prompt.lower().strip() == "yes":
             funct = input("What would you like to perform (import/statistics)? ")
-            continue
+            inv = False
+        else:
+            print("INVALID RESPONSE")
+            inv = True
     else:
         #input not valid
         print("INVALID FUNCTION")
