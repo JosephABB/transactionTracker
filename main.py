@@ -14,7 +14,7 @@ while cont:
     #code for import function
     if funct.lower().strip() == "import":
         if inv == False:
-            print("importing")
+            import_file.imp()
         cont, funct, inv = cont_loop.cont_anlys()
     #code for statistics function
     elif funct.lower().strip() == "statistics":
